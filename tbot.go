@@ -26,6 +26,10 @@ func main()  {
 	}
 	log.Println("Bot created")
 
+	// Debuging
+	bot.Debug = true
+	log.Printf("Authorized on account %s", bot.Self.UserName)
+
 	if _, err := bot.SetWebhook(tgbotapi.NewWebhook(webHook)); err != nil {
 		log.Fatalf("Setting webHook %v: error: %v", webHook, err)
 	}
