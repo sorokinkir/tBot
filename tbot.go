@@ -9,15 +9,15 @@ import (
 )
 
 const (
-	webHook = "" 
+	webHook = "https://telecom-bot1.herokuapp.com/"
 )
 
-func main()  {
+func main() {
 	token := os.Getenv("TOKEN")
 	port := os.Getenv("PORT")
 
-	go func ()  {
-		_ = http.ListenAndServe(":" + port, nil)
+	go func() {
+		_ = http.ListenAndServe(":"+port, nil)
 	}()
 
 	bot, err := tgbotapi.NewBotAPI(token)
