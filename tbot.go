@@ -35,7 +35,7 @@ func main() {
 	}
 	log.Println("webHook setting set")
 
-	updates := bot.ListenForWebhook("/")
+	updates := bot.ListenForWebhook("/" + bot.Token)
 	for update := range updates {
 		if _, err := bot.Send(tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)); err != nil {
 			log.Println(err)
